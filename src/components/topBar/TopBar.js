@@ -1,8 +1,10 @@
 import React from 'react';
-import { Navbar, Container, Nav, NavDropdown} from 'react-bootstrap';
+import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import pic from '../../img/menu-img.jpg'
 import './NavBar.css'
 const TopBar = () => {
+    const user = true;
     return (
         <>
             <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
@@ -11,16 +13,42 @@ const TopBar = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#features">HOME</Nav.Link>
-                            <Nav.Link href="/about">ABOUT</Nav.Link>
-                            <Nav.Link href="/contact">CONTACT</Nav.Link>
-                            <Nav.Link href="/write">WRITE</Nav.Link>
+                            <Nav.Link>
+                                <Link className="link" to='/'>HOME</Link>
+                            </Nav.Link>
+                            <Nav.Link>
+                                <Link className="link" to='/about'>ABOUT</Link>
+                            </Nav.Link>
+                            <Nav.Link>
+                                <Link className="link" to='/contact'>CONTACT</Link>
+                            </Nav.Link>
+                            <Nav.Link>
+                                <Link className="link" to='/write'>WRITE</Link>
+                            </Nav.Link>
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#deets">
-                            <img src={pic} alt="Logo" className="avatar"/>;
-                            </Nav.Link>
-                            <Nav.Link href="/logout">LOGOUT</Nav.Link>
+                        {user ? (
+          <Link className="link" to="/settings">
+            <img
+              className="topImg avatar"
+              src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+              alt=""
+            />
+          </Link>
+        ) : (
+          <ul className="topList">
+            <li className="topListItem">
+              <Link className="link" to="/login">
+                LOGIN
+              </Link>
+            </li>
+            <li className="topListItem">
+              <Link className="link" to="/register">
+                REGISTER
+              </Link>
+            </li>
+          </ul>
+        )}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
