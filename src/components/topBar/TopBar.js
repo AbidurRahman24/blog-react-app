@@ -9,7 +9,11 @@ const TopBar = () => {
         <>
             <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
                 <Container>
-                    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+                    <Navbar.Brand >
+                        <Link to='/' className="link">
+                            React-Bootstrap
+                        </Link>
+                    </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
@@ -27,28 +31,28 @@ const TopBar = () => {
                             </Nav.Link>
                         </Nav>
                         <Nav>
-                        {user ? (
-          <Link className="link" to="/settings">
-            <img
-              className="topImg avatar"
-              src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-              alt=""
-            />
-          </Link>
-        ) : (
-          <ul className="topList">
-            <li className="topListItem">
-              <Link className="link" to="/login">
-                LOGIN
-              </Link>
-            </li>
-            <li className="topListItem">
-              <Link className="link" to="/register">
-                REGISTER
-              </Link>
-            </li>
-          </ul>
-        )}
+                            {user ? (
+                                <Link className="link" to="/settings">
+                                    <img
+                                        className="topImg avatar"
+                                        src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                                        alt=""
+                                    />
+                                </Link>
+                            ) : (
+                                <ul className="topList">
+                                    <li className="topListItem">
+                                        <Link className="link" to="/login">
+                                            LOGIN
+                                        </Link>
+                                    </li>
+                                    <li className="topListItem">
+                                        <Link className="link" to="/register">
+                                            REGISTER
+                                        </Link>
+                                    </li>
+                                </ul>
+                            )}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

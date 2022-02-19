@@ -17,15 +17,24 @@ import {
 
 
 function App() {
-  // const currentUser = true;
+  const currentUser = true;
   return (
     <BrowserRouter>
     <TopBar></TopBar>
     <Routes>
       <Route path="/" element={<Home />}>
-        <Route path="/" element={<Header />}>
-        </Route>
       </Route>
+      <Route path="/register" element={currentUser ? <Home /> : <Register />}>
+        </Route>
+        <Route path="/login" element={currentUser ? <Home /> : <LogIn />}>
+        </Route>
+        <Route path="/post/:id" element={<Single />}>
+        </Route>
+        <Route path="/write" element={currentUser ? <Write /> : <LogIn/>} >
+        </Route>
+        <Route path="/settings" element={currentUser ? <Setting /> : <LogIn />}>
+        </Route>
+        <Route path="*" element={<NotMatch />} />
     </Routes>
 
 
@@ -34,15 +43,7 @@ function App() {
 
 
 
-        {/* <Route path="/register">
-          {currentUser ? <Home /> : <Register />}
-        </Route>
-        <Route path="/login">{currentUser ? <Home /> : <LogIn />}</Route>
-      
-      <Route path="/post/:id">
-          <Single />
-        </Route>
-        <Route path="/write">{currentUser ? <Write /> : <LogIn/>}</Route>
+        {/*
         <Route path="/settings">
           {currentUser ? <Setting /> : <LogIn />}
         </Route> */}

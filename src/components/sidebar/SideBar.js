@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './SideBar.css'
 
 const SideBar = () => {
@@ -19,34 +20,34 @@ const SideBar = () => {
         <span className="sidebarTitle">CATEGORIES</span>
         <ul className="sidebarList">
           <li className="sidebarListItem">
-            <a className="link" href="/posts?cat=Life">
+            <Link className="link" to="/posts?cat=Life">
               Life
-            </a>
+            </Link>
           </li>
           <li className="sidebarListItem">
-            <a className="link" href="/posts?cat=Music">
+            <Link className="link" to="/posts?cat=Music">
               Music
-            </a>
+            </Link>
           </li>
           <li className="sidebarListItem">
-            <a className="link" href="/posts?cat=Sport">
+            <Link className="link" to="/posts?cat=Sport">
               Sport
-            </a>
+            </Link>
           </li>
           <li className="sidebarListItem">
-            <a className="link" href="/posts?cat=Style">
+            <Link className="link" to="/posts?cat=Style">
               Style
-            </a>
+            </Link>
           </li>
           <li className="sidebarListItem">
-            <a className="link" href="/posts?cat=Tech">
+            <Link className="link" to="/posts?cat=Tech">
               Tech
-            </a>
+            </Link>
           </li>
           <li className="sidebarListItem">
-            <a className="link" href="/posts?cat=Cinema">
+            <Link className="link" to="/posts?cat=Cinema">
               Cinema
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

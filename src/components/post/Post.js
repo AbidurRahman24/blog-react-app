@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Post.css';
 
 const Post = () => {
@@ -12,20 +13,20 @@ const Post = () => {
             <div className="postInfo">
                 <div className="postCats">
                     <span className="postCat">
-                        <a className="link" href="/posts?cat=Music">
+                        <Link className="link" to="/posts?cat=Music">
                             Music
-                        </a>
+                        </Link>
                     </span>
                     <span className="postCat">
-                        <a className="link" href="/posts?cat=Music">
+                        <Link className="link" to="/posts?cat=Music">
                             Life
-                        </a>
+                        </Link>
                     </span>
                 </div>
                 <span className="postTitle">
-                    <a href="/post/abc" className="link">
+                    <Link to="/post/abc" className="link">
                         Lorem ipsum dolor sit amet
-                    </a>
+                    </Link>
                 </span>
                 <hr />
                 <span className="postDate">1 hour ago</span>
