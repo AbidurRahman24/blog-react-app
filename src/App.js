@@ -16,7 +16,7 @@ import {
 
 
 function App() {
-  const currentUser = true;
+  const currentUser = false;
   return (
     <BrowserRouter>
     <TopBar></TopBar>

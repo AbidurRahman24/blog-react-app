@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import pic from '../../img/menu-img.jpg'
 import './NavBar.css'
 const TopBar = () => {
-    const user = true;
+    const user = false;
     return (
         <>
             <Navbar collapseOnSelect expand="lg" bg="light" variant="light">

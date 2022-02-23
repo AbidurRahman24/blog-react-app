@@ -7,7 +7,7 @@ const SinglePost = () => {
     const location = useLocation();
     const path = location.pathname.split("/")[2];
     const [post, setPost] = useState({});
-    console.log(post);
+    // console.log(post);
 
     useEffect(() => {
         const getPost = async () => {

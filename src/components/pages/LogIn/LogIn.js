@@ -2,8 +2,8 @@ import React from 'react';
 import './LogIn.css'
 
 const LogIn = () => {
-    return (
-<div className="login">
+  return (
+    <div className="login">
       <span className="loginTitle">Login</span>
       <form className="loginForm">
         <label>Email</label>
@@ -12,9 +12,9 @@ const LogIn = () => {
         <input className="loginInput" type="password" placeholder="Enter your password..." />
         <button className="loginButton">Login</button>
       </form>
-        <button className="loginRegisterButton">Register</button>
+      <button className="loginRegisterButton">Register</button>
     </div>
-    );
+  );
 };
 
 export default LogIn;
