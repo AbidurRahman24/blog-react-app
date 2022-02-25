@@ -13,25 +13,27 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import { useContext } from 'react';
+import { Context } from './components/context/Context';
 
 
 function App() {
-  const currentUser = false;
+  const { user } = useContext(Context);
   return (
     <BrowserRouter>
     <TopBar></TopBar>
     <Routes>
       <Route path="/" element={<Home />}>
       </Route>
-      <Route path="/register" element={currentUser ? <Home /> : <Register />}>
+      <Route path="/register" element={user  ? <Home /> : <Register />}>
         </Route>
-        <Route path="/login" element={currentUser ? <Home /> : <LogIn />}>
+        <Route path="/login" element={user  ? <Home /> : <LogIn />}>
         </Route>
         <Route path="/post/:id" element={<Single />}>
         </Route>
-        <Route path="/write" element={currentUser ? <Write /> : <LogIn/>} >
+        <Route path="/write" element={user  ? <Write /> : <LogIn/>} >
         </Route>
-        <Route path="/settings" element={currentUser ? <Setting /> : <LogIn />}>
+        <Route path="/settings" element={user  ? <Setting /> : <LogIn />}>
         </Route>
         <Route path="*" element={<NotMatch />} />
     </Routes>
